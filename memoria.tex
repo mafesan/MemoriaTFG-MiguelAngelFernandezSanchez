@@ -316,7 +316,7 @@ todo el tiempo de vida de cada proyecto.
 % No te olvides de echarle un ojo a la p�gina con los cinco errores de escritura m�s frecuentes\footnote{\url{http://www.tallerdeescritores.com/errores-de-escritura-frecuentes}}.
 % #TODO Ask for resources to back this data:
 GitHub is the most used online code platform in the world. We can extract huge amounts of information from millions of projects
-about how is the software being developed: productivity, issue-tracking methods, developer-to-developer relations, etc. [RGBM06]
+about how is the software being developed: productivity, issue-tracking methods, developer-to-developer relations, etc.~\cite{robles2006beyond}
 For researchers, GitHub is an endless source of publicly available data for potential studies, and for companies and communities
 is probably the best way to know deeply how its software is evolving over time, so they can use this data to make the right decisions
 for the future (known as data-driven decisions).\par
@@ -339,8 +339,8 @@ view about research and large-scope projects.
 \label{sec:context}
 The way people develop software has evolved during these years. There is an extended social perception of developers to
 being introverted, solitary people, with very few social skills, but this sense is outdated: the paradigm has changed,
-as coding has become a social activity. Developers who work collaborating with others produce better software [resource], as they
-are continuously reading code from other developers, getting feedback about their contributions and consequently
+as coding has become a social activity. Developers who work collaborating with others produce better software~\cite{Vasilescu:2014:SDH:2556420.2556833},
+as they are continuously reading code from other developers, getting feedback about their contributions and consequently
 widening their knowledge with new procedures and ideas.\par
 In the last few years we have seen how this social trend came to software with the
 emergence of social coding platforms, such as GitHub\footnote{\url{https://github.com}},
@@ -462,7 +462,7 @@ but this entails several limitations. To mention the most important ones:
     \item There isn't a direct way
     of obtaining the amount of repositories in the platform at a certain date using its \textit{API}.
 \end{itemize}
-These limitations led to the decision of using the \emph{GHTorrent} project, which offers a queriable, offline \emph{MySQL}
+These limitations led to the decision of using the \emph{GHTorrent} project~\cite{Gousi13}, which offers a queriable, offline \emph{MySQL}
 database with most of the information which the GitHub API can provide.\par
 Although GitHub allows to filter projects by a certain programming language (e.g. \emph{Python}, \emph{C++}, etc.),
 it does not offer a mechanism through which you can identify projects containing files with a certain extension or how many files
@@ -473,8 +473,9 @@ in order to retrieve this information so later it can be applied a set of filter
 requirements. Once OB1, OB2 and OB3 are achieved, the obtained results will constitute the answer to RQ1.\par
 OB4 and OB5 have to be completed to answer \emph{RQ2}. Analyzing Git repositories is not a trivial task, as it is crucial
 to retrieve complete and reliable information from them to perform a robust analysis. That's why it was decided to
-use a tool called \emph{Perceval} which belongs to the \emph{GrimoireLab} project, a mature and Free/Libre tool-set for software development
-analytics, to comply with OB4. It should be noted that this tool is not valid to perform OB2 and that's why the direct access to the
+use a tool called \emph{Perceval} which belongs to the \emph{GrimoireLab} project, an evolution from \emph{CVSanalY}\cite{robles2009tools} software.
+\emph{GrimoireLab} is a mature and Free/Libre tool-set for software development analytics, used to extract metrics from large, industrial projects but
+also to perform research studies in academia. With such background, \emph{Perceval} tool is suitable to comply with OB4. Nonetheless, it should be noted that this tool is not valid to perform OB2 and that's why the direct access to the
 GitHub API is still needed. Lastly, to accomplish OB5 the approach is to store the data obtained with \emph{Perceval} in a database to execute
 the necessary queries to obtain answers for RQ2 and any further questions.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -957,7 +958,7 @@ showing an overview of its results taking into account specific details and limi
 \section{Case of study: UML models in GitHub projects}
 \label{sec:case-study-uml}
 This methodology was applied for the first time to the study: ”The quest for Open Source projects that use
-UML: Mining GitHub” [HQC + 16 - cite] (The full paper is available in section~\ref{sec:paper-models}).
+UML: Mining GitHub”~\cite{hebig2016quest} (The full paper is available in section~\ref{sec:paper-models}).
 This research has been a collaborative work between Chalmers University and Rey Juan Carlos University in the context
 explained in section~\ref{sec:context}.
 The main goal of this study was to deepen in the knowledge of usage and evolution of UML models in
@@ -1004,7 +1005,7 @@ UML model can be found, as is it showed in table~\ref{table:heuristics-cs1-examp
 As described before, an additional problem arose: from all the identified files with the interesting extensions, how many of those files
 really are a UML model, and how many are not? As the tool has a modular design, it was easy to add an additional phase to verify the data
 which was obtained after the filtering. This verification process was solved by Chalmers team, using heuristics for the XML-alike files
-and image processing and machine learning techniques for image files [HQCS + 14a, HQCS + 14b - \textcolor{red}{FIXME: Citations}].\par
+and image processing and machine learning techniques for image files~\cite{hoquang2014, ho-quang2014umlclassifier}.\par
 UML models can be included either in image or text files (See figure~\ref{fig:uml-types}), therefore our main filter using file extensions
 and character patters in file-names is not enough to completely identify UML files. That is why it was necessary the inclusion of
 an additional phase where all the positive outcomes after applying the first filter (now marked as \textbf{potential files}) need
